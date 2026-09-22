@@ -1,0 +1,43 @@
+[worldserver]
+
+########################################
+# mod-languages configuration
+#
+# Faction leaders will teach their people's language for a fee. Talk to the
+# leader and the offer appears in their gossip window, with the usual "this
+# costs money" confirmation box.
+#
+# Who teaches what, and for how much, lives in the world database table
+# `language_teacher` (seeded by sql/05_language_teachers.sql), not here:
+#
+#   UPDATE language_teacher SET Cost = 500000;            -- 50g for everything
+#   UPDATE language_teacher SET Cost = 0 WHERE Spell = 668;  -- Common for free
+#   INSERT INTO language_teacher VALUES (1234, 669, 1000000, 'some other orc');
+#
+# ".language list" prints the loaded table and ".language reload" re-reads it
+# without restarting.
+########################################
+#
+#    Languages.Enable
+#        Description: Offer languages for sale at all.
+#        Default:     1 - (Enabled)
+#                     0 - (Disabled)
+
+Languages.Enable = 1
+
+#
+#    Languages.Announce
+#        Description: Tell the character which language it just learned.
+#        Default:     1 - (Enabled)
+
+Languages.Announce = 1
+
+#
+#    Languages.RequireReputation
+#        Description: Honour the reputation requirement in the
+#                     `language_teacher` table. The seeded teachers all want
+#                     Exalted with their own faction; with this off, the
+#                     requirement is ignored and only the price applies.
+#        Default:     1 - (Enabled)
+
+Languages.RequireReputation = 1
