@@ -26,3 +26,8 @@ The teacher/gossip data in SQL (see the server project's `sql/` directory).
 The table is loaded in `OnStartup`, not `OnAfterConfigLoad`: DBC and object
 stores do not exist at config-load time, and validating ids there silently
 discards every row.
+
+## Licence
+
+GNU Affero General Public License v3.0, the licence AzerothCore and its
+modules use. See [LICENSE](LICENSE).
